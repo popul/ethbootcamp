@@ -1,0 +1,23 @@
+{
+  "name": "etbbootcamp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "workspaces": [
+    "week3",
+    "week4"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/popul/ethbootcamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/popul/ethbootcamp/issues"
+  },
+  "homepage": "https://github.com/popul/ethbootcamp#readme"
+}
