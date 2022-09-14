@@ -10,6 +10,14 @@ import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { showError } from "../utils/common";
 
+const getBestOfferPrice = (offers) => {
+  const prices = offers.map(o => o.offerPrice.toNumber()).sort();
+  if (!prices.length) {
+    return 0;
+  }
+  return prices[prices.length - 1] + 1;
+}
+
 const AuctionDetail = ({ blockchain }) => {
   // State to store offers
   const [offers, setOffers] = useState([]);
@@ -94,7 +102,7 @@ const AuctionDetail = ({ blockchain }) => {
                         placeholder="Enter offer"
                       />
                       <Form.Text className="text-muted">
-                        Minimum offer is {auction.minimumOfferPrice}
+                        Minimum offer is {getBestOfferPrice(offers) || auction.minimumOfferPrice}
                       </Form.Text>
                     </Form.Group>
                   </Col>
